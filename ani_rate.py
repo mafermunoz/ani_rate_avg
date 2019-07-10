@@ -34,7 +34,8 @@ def main(nmap,njob,energy_range,year,JOBS=10):
     poisson_dist=np.array_split(poisson_dist,JOBS)
 
     #sat_pointing=np.load('pointing_history_'+str(year)+'.npy')
-    sat_poitning=np.load('/beegfs/dampe/users/mmunozsa/sat_info_2016.npy')
+    sat_pointing=np.load('/beegfs/dampe/users/mmunozsa/sat_info_2016.npy')
+
     print(len(sat_pointing))
     sat_pointing=np.array_split(sat_pointing,JOBS)#shuffle the sat pointing
     start=0
