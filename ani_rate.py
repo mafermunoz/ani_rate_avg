@@ -3,7 +3,7 @@ import healpy as hp
 import sys
 from root_numpy import root2array
 from ROOT import TVector3, TMatrixD
-from rot import * 
+from rot import *
 
 def main(nmap,njob,energy_range,year,JOBS=10):
     nmap=int(nmap)##From 1 to 100
@@ -49,7 +49,8 @@ def main(nmap,njob,energy_range,year,JOBS=10):
     poisson_dist=poisson_dist[njob-1]
     print(poisson_dist.sum())
     #np.random.shuffle(sat_pointing)
-    track=np.load('/beegfs/dampe/users/mmunozsa/ani_tracks_xyz/2016_data_025_050track_xyz_shuffled_'+str(nmap)+'.npy')
+    track=np.load('/beegfs/dampe/users/mmunozsa/ani_tracks_xyz/2016_002_010track_xyz_shuffled_'+str(nmap)+'.npy')
+    #track=np.load('/beegfs/dampe/users/mmunozsa/ani_tracks_xyz/2016_data_025_050track_xyz_shuffled_'+str(nmap)+'.npy')
     #track=np.load('/beegfs/dampe/users/mmunozsa/random_maps/tracks_data_'+year+"_"+energy_range+'_shuffled_'+str(nmap-1)+'.npy')
 
     nTracks=len(track)
