@@ -1,6 +1,6 @@
 for l in '2016'
 do
-  for k in '002_010'
+  for k in '025_050'
   do
     for i in {1..100}
     do
