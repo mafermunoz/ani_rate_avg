@@ -77,7 +77,7 @@ def main(nmap,njob,energy_range,year,JOBS=10):
             continue
         for j in range (x):## For each of the tracks that the possion distribution says to us
 
-            if(ctrack<nTracks and i<sat_pointing): ## Counter to check we dont repeat tracks
+            if(ctrack<nTracks and i<esat): ## Counter to check we dont repeat tracks
                 a=sat_pointing[i]
                 #ra[cc],dec[cc],r=thetaphi2radec(np.rad2deg(track[ctrack,0]),np.rad2deg(track[ctrack,1])+180,np.rad2deg(a[0]),np.rad2deg(a[1]))
                 r_sat=TVector3(a[2],a[3],a[4])
