@@ -14,7 +14,7 @@ def Orb2Equ_RM(r_sat, v_sat, r_Track):
     Z_sat = -r_sat.Unit() #Z_sat is in the Inverse Direction of Satellite Position
     Y_sat =  v_sat.Cross(r_sat).Unit()#; //Y_sat is in the Inverse Direction of Orbit Normal
     X_sat =  Y_sat.Cross(Z_sat).Unit()#; //X = Y Cross Z
-    print (X_sat)
+    #print (X_sat)
     #//The Row Vectors of the Rotation Matrix are X_sat, Y_sat, and Z_sat
     T[0][0] = X_sat.X()
     T[1][0] = X_sat.Y()
