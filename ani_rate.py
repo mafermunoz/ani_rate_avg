@@ -29,7 +29,7 @@ def main(nmap,njob,energy_range,year,JOBS=10):
 
     ##Load the distribution from where to pull
 
-    poisson_dist=np.load('/beegfs/dampe/users/mmunozsa/pois_dist/pois_dist_year_'+str(nyear)+"_energy_bin"+str(energy_bin)+'_nmap_'+str(nmap)+'.npy')#From  file with the random tracks according to the poisson distribution
+    poisson_dist=np.load('/beegfs/dampe/users/mmunozsa/pois_dist/pois_dist_year_new_'+str(nyear)+"_energy_bin"+str(energy_bin)+'_nmap_'+str(nmap)+'.npy')#From  file with the random tracks according to the poisson distribution
     print(len(poisson_dist))
     poisson_dist=np.array_split(poisson_dist,JOBS)
 
@@ -93,7 +93,7 @@ def main(nmap,njob,energy_range,year,JOBS=10):
     #ra=np.array(ra)
     #dec=np.array(dec)
 
-    np.savez("../Map_data_"+year+"_"+energy_range+"_"+str(nmap)+"_"+str(njob),ra=ra,dec=dec)
+    np.savez("../Map_data_new_"+year+"_"+energy_range+"_"+str(nmap)+"_"+str(njob),ra=ra,dec=dec)
 
 
 

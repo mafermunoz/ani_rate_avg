@@ -6,7 +6,7 @@ do
     do
       for j in {1..10}
       do
-        OUTF="../Map_data_"$l'_'$k'_'$i'_'$j'.npz'
+        OUTF="../Map_data_new_"$l'_'$k'_'$i'_'$j'.npz'
         if [ ! -f ${OUTF} ]; then
           echo  $i $j $k $l
           echo $OUTF
