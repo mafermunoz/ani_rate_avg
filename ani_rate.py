@@ -3,7 +3,7 @@ import healpy as hp
 import sys
 from root_numpy import root2array
 from ROOT import TVector3, TMatrixD
-
+from rot import * 
 
 def main(nmap,njob,energy_range,year,JOBS=10):
     nmap=int(nmap)##From 1 to 100
