@@ -38,16 +38,23 @@ def main(nmap,energy_range,year):
     #x=events_per_year[nyear-1,energy_bin-1]
     #data=np.stack((ra,dec),axis=1)
 
+    data = {"L":ra, "B":dec}
 
-
-    data = {"L":ra[:], "B":dec[:]}
-    print(len(ra))
     NSIDE = 32
-    pixels= healpy.ang2pix(NSIDE, (np.deg2rad(90-data['B'])), np.deg2rad(data['L']))
+    pixels= healpy.ang2pix(NSIDE,data['L'], data['B'])
     hitmap= np.zeros(healpy.nside2npix(NSIDE)) * healpy.UNSEEN
     pixels_binned=0
     pixels_binned =np.bincount(pixels)
     hitmap[:len(pixels_binned)] =  pixels_binned
+
+    # data = {"L":ra[:], "B":dec[:]}
+    # print(len(ra))
+    # NSIDE = 32
+    # pixels= healpy.ang2pix(NSIDE, np.deg2rad(90)-data['B'],data['L'])
+    # hitmap= np.zeros(healpy.nside2npix(NSIDE)) * healpy.UNSEEN
+    # pixels_binned=0
+    # pixels_binned =np.bincount(pixels)
+    # hitmap[:len(pixels_binned)] =  pixels_binned
 
     np.save("../Map_full_hitmap_"+year+"_"+energy_range+"_"+str(nmap),hitmap)
 
